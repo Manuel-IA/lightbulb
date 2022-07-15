@@ -1,0 +1,4 @@
+<%= turbo_frame_tag 'bulbs' do %>
+<% end %>
+
+<%= link_to "Change", change_path, class: "btn btn--primary", data: { turbo_frame: 'bulbs' } %>
