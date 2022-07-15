@@ -1,5 +1,7 @@
 <%= turbo_stream_from "bulb" %>
 
+<h1><%= session[:name] %></h1>
+
 <%= turbo_frame_tag 'bulbs' do %>
    <%= render 'bulbs/bulb', bulb: @bulb %>
 <% end %>

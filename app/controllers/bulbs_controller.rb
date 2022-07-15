@@ -2,6 +2,7 @@ class BulbsController < ApplicationController
   before_action :set_bulb
 
   def index
+    session[:name] = User.get_name if session[:name].blank?
   end
 
   def change
