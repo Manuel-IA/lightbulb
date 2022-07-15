@@ -7,3 +7,10 @@
 <% end %>
 
 <%= link_to "Change", change_path, class: "btn btn--primary", data: { turbo_frame: 'bulbs' } %>
+
+<br>
+  logs
+  <br>
+  <%= turbo_frame_tag 'logs' do %>
+    <%= render @logs %>
+  <% end %>

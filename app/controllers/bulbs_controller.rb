@@ -3,6 +3,7 @@ class BulbsController < ApplicationController
 
   def index
     session[:name] = User.get_name if session[:name].blank?
+    @logs = Log.last(10).reverse
   end
 
   def change
