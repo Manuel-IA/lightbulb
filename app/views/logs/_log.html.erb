@@ -1,2 +1,2 @@
-<%= log.user %> <%= log.action ? 'turned off' : 'turned on' %> Lightbulb at <%= log.created_at.to_datetime %>
+<%= log.user %> <%= log.action == 'f' ? 'turned off' : 'turned on' %> Lightbulb at <%= log.created_at.to_datetime %>
 <br>

@@ -1,1 +1,2 @@
 <%= turbo_stream.replace "bulb", partial: "bulbs/bulb", locals: { bulb: @bulb } %>
+<%= turbo_stream.append "logs", partial: "bulbs/log", locals: { log: @log } %>
