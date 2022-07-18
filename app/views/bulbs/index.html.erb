@@ -1,16 +1,23 @@
 <%= turbo_stream_from "bulb" %>
 
-<h1><%= session[:name] %></h1>
+<div class="container-fluid my-5">
+   <h1 class="text-center mb-4">
+      <%= image_tag "https://robohash.org/#{session[:name]}.png", class: 'pb-3', size: 64 %>
+      <%= session[:name] %>
+   </h1>
 
-<%= turbo_frame_tag 'bulbs' do %>
-   <%= render 'bulbs/bulb', bulb: @bulb %>
-<% end %>
-
-<%= link_to "Change", change_path, class: "btn btn--primary", data: { turbo_frame: 'bulbs' } %>
-
-<br>
-  logs
-  <br>
-  <%= turbo_frame_tag 'logs' do %>
-    <%= render @logs %>
-  <% end %>
+   <div class="d-flex justify-content-center">
+      <%= turbo_frame_tag 'bulbs', class: 'w-100 text-center' do %>
+         <%= render 'bulbs/bulb', bulb: @bulb %>
+      <% end %>
+   </div>
+   <div class="d-flex justify-content-center my-3">
+      <%= link_to "Change", change_path, class: "btn btn-lg btn-primary", data: { turbo_frame: 'bulbs' } %>
+   </div>
+   <h2 class="text-center">Logs</h2>
+   <div style="height: 240px; overflow-y: auto" class="d-flex justify-content-center">
+      <%= turbo_frame_tag 'logs' do %>
+         <%= render @logs %>
+      <% end %>
+   </div>
+</div>

@@ -1,2 +1,12 @@
-<%= log.user %> <%= log.action == 'f' ? 'turned off' : 'turned on' %> Lightbulb at <%= log.created_at.to_datetime %>
-<br>
+<div class="d-block text-center">
+  <%= image_tag "https://robohash.org/#{log.user}.png", size: 36 %>
+  <span class="fw-bold font-monospace">
+    <%= log.user %>
+  </span> 
+  <span class="fw-bold me-1">
+    <%= log.action == 'f' ? "turned off" : '<span class="text-warning">turned on</span>'.html_safe %> 
+  </span>
+  <span class="fst-italic fw-light">
+    Lightbulb at <%= "#{log.created_at.strftime("%A, %B %d %Y")} #{log.created_at.strftime('%I:%M:%S %p')}" %>
+  </span>  
+</div>
