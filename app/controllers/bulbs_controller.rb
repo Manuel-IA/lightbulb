@@ -21,6 +21,6 @@ class BulbsController < ApplicationController
   private
   
   def set_bulb
-    @bulb = Bulb.first
+    @bulb = Bulb.first || Bulb.create(status: false)
   end
 end
